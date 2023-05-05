@@ -1,13 +1,15 @@
 #include <stdio.h>
 #include <conio.h>
 
-void nhap(int ngay,int thang,int nam)
+void nhap(int* ngay,int* thang,int* nam)
 {
 	printf("Nhap lan luot ngay ,thang va nam\n");
-	scanf("%d%d%d",&ngay,&thang,&nam);
+	scanf("%d%d%d",ngay,thang,nam);
+	
 }
 int nhuan(int nam)
-{
+{    
+	printf("%d", nam);
 	int hc;
 	if(nam%400==0||(nam%4==0&&nam%100!=0))
 		hc=1;
@@ -59,7 +61,10 @@ void main()
 {   
     int ngay,thang,nam;
 	int hc,t;
-	nhap(ngay,thang,nam);
+	nhap(&ngay,&thang,&nam);
+	printf("%d %d %d", ngay , thang, nam );
+
+	
 	hc = hople(ngay,thang,nam);
     if(hc)
 	{
